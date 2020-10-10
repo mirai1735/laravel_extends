@@ -18,7 +18,7 @@
           調整中
         </a>
         <div class="dropdown-menu" aria-labelledby="navbarDropdown">
-          <a class="dropdown-item" href="#">管理者用ページ</a>
+          <a class="dropdown-item" href="{{ url('/login') }}">管理者用ページ</a>
           <a class="dropdown-item" href="#">Another action</a>
           <div class="dropdown-divider"></div>
           <a class="dropdown-item" href="#">Something else here</a>
