@@ -9,9 +9,9 @@
     @foreach ($posts as $post)
       <div class="card">
         <div class="card-body">
-          <h5 class="card-title">{{ $post->title }}</h5>
+          <h5 class="card-title float-left">{{ $post->title }}</h5>
           <div class="d-flex">
-            <a href="{{ action('PostsController@show', $post->id) }}" class="btn btn-outline-primary">詳細</a>
+            <a href="{{ action('PostsController@show', $post->id) }}" class="btn btn-outline-primary index-card-item">詳細</a>
           </div>
         </div>
       </div>

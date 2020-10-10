@@ -15,5 +15,7 @@ Route::get('/', 'HomeController@top');
 
 Route::get('/posts/index', 'PostsController@index');
 Route::get('/posts/new', 'PostsController@new');
-Route::get('/posts/{id}', 'PostsController@show');
 Route::post('/posts/create', 'PostsController@create');
+Route::get('/posts/{id}', 'PostsController@show');
+Route::get('/posts/{id}/edit', 'PostsController@edit');
+Route::post('/posts/{id}/update', 'PostsController@update');
