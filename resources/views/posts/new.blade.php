@@ -18,8 +18,8 @@
     <textarea class="form-control" name="content" cols="30" rows="10"></textarea>
   </div>
   
-  <input type="submit" class="btn btn-outline-primary" value="保存">
+  <input type="submit" class="btn btn-outline-primary float-left mr-1" value="保存">
 </form>
 
-<a href="{{ url('/posts/index') }}">戻る</a>
+<a class="btn btn-outline-danger" href="{{ url('/posts/admin') }}">戻る</a>
 @endsection

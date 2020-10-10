@@ -12,16 +12,25 @@
 */
 
 Route::get('/', 'HomeController@top');
-
-Route::get('/posts/index', 'PostsController@index');
 Route::get('/posts/admin', 'PostsController@yk_admin');
+Route::get('/posts/index', 'PostsController@index');
 Route::get('/posts/new', 'PostsController@new');
 Route::post('/posts/create', 'PostsController@create');
-Route::get('/posts/{id}', 'PostsController@show');
 Route::get('/posts/{id}/edit', 'PostsController@edit');
+Route::get('/posts/{id}', 'PostsController@show');
 Route::post('/posts/{id}/update', 'PostsController@update');
 Route::delete('/posts/{id}/delete', 'PostsController@destroy');
+
 
 Auth::routes();
 
 Route::get('home', 'AuthesController@home')->name('home');
+
+Route::group(['middleware' => 'auth'], function() {
+  Route::get('/posts/admin', 'PostsController@yk_admin');
+  Route::get('/posts/{id}/edit', 'PostsController@edit');
+  Route::get('/posts/new', 'PostsController@new');
+  Route::post('/posts/create', 'PostsController@create');
+  Route::post('/posts/{id}/update', 'PostsController@update');
+  Route::delete('/posts/{id}/delete', 'PostsController@destroy');
+});
