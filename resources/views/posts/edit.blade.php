@@ -23,6 +23,10 @@
     <input class="btn btn-outline-primary d-flex" type="submit" value="保存">
   </form>
 
-  <form action=""></form>
+  <form action="{{ action('PostsController@destroy', $post->id) }}" method="post">
+    {{ csrf_field() }}
+    {{ method_field('delete') }}
+    <input type="submit" value="削除" class="btn btn-outline-primary">
+  </form>
   <a href="{{ url('/posts/index') }}" class="btn btn-outline-danger">戻る</a>
 @endsection

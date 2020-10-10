@@ -80,4 +80,11 @@ class PostsController extends Controller
         return redirect('/posts/index');
 
     }
+
+    public function destroy($id) {
+        $post = Post::findOrFail($id);
+        $post->delete();
+        return redirect('posts/index');
+
+    }
 }
