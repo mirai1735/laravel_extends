@@ -84,7 +84,12 @@ class PostsController extends Controller
     public function destroy($id) {
         $post = Post::findOrFail($id);
         $post->delete();
-        return redirect('posts/index');
+        return redirect('posts/admin');
 
+    }
+
+    public function yk_admin() {
+        $posts = Post::all();
+        return view('posts.yk_admin')->with('posts', $posts);
     }
 }
